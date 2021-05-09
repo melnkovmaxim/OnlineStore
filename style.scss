@@ -1,0 +1,88 @@
+/* color */
+$light: #f9f6f1;
+$light-gray: #f4f4f4;
+$gray: #cbcfd4;
+$dark-gray: #8d8d8d;
+$accent: #d7b399;
+$dark: #212121;
+$important: #d84033;
+
+/**/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page-light {
+    background-color: $light;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: none;
+    &-item {
+        margin-left: 52px;
+    }
+    &-link {
+        
+        color: $dark;
+        text-decoration: none;
+    }
+}
+
+.wrapper {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.cart {
+    background-image: url(../img/cart.svg);
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+    padding-left: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+
+    &-count {
+        $height: 15px;
+        
+        height: $height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2.5px;
+        width: 100%;
+        align-self: center;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        background-color: $accent;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 100%;
+            width: 0;
+            top: 0;
+            bottom: 0;
+            border-top: $height / 2 solid transparent;
+            border-right: 14px solid $accent;
+            border-bottom: $height / 2 solid transparent;
+        }
+    }
+}
