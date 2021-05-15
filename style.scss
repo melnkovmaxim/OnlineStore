@@ -13,7 +13,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.page-light {
+.page--light {
     background-color: $light;
 }
 
@@ -30,18 +30,30 @@ body {
     display: flex;
     list-style-type: none;
     padding-left: none;
+
     &-item {
-        margin-left: 52px;
-    }
-    &-link {
+        margin-right: 52px;
         
+        &:hover {
+            .nav-submenu {
+                transition: .4s;
+                transform: scaleY(1);
+            }
+        }
+    }
+
+    &-link {
         color: $dark;
         text-decoration: none;
+    }
+
+    &-submenu {
+        list-style: none;
+        transform-origin: 0 0;
     }
 }
 
 .wrapper {
-    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -84,5 +96,77 @@ body {
             border-right: 14px solid $accent;
             border-bottom: $height / 2 solid transparent;
         }
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+        flex: 0 0 50%;
+    }
+
+    .sale {
+
+        &__description {
+            font-size: 30px;
+        }
+
+        &__title {
+            font-size: 55px;
+
+        }
+
+        &__btn {
+            font-weight: 400;
+        }
+    }
+}
+
+.btn {
+    color: #fff;
+    background-color: $accent;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+.box {
+    position: relative;
+
+    &-price {
+        position: absolute;
+        right: 25;
+    }
+}
+
+.dropdown {
+    > .nav-link:after {
+        display: block;
+        position: absolute;
+        background-color: $dark;
+        content: '';
+    }
+
+    &-menu {
+        height: 0;
+        position: absolute;
+        background-color: $accent;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        transition: .5s ease-in-out;
+
+        > .wrapper {
+            display: flex;
+            flex-flow: column;
+            background-color: green;
+        }
+    }
+
+    &:hover > &-menu {
+        transform: scaleY(1);
     }
 }
