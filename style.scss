@@ -145,24 +145,33 @@ body {
 
 .dropdown {
     > .nav-link:after {
-        display: block;
-        position: absolute;
-        background-color: $dark;
+        margin: 0 0 3px 5px;
         content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid $dark;
     }
 
     &-menu {
         height: 0;
         position: absolute;
-        background-color: $accent;
         transform: scaleY(0);
         transform-origin: 0 0;
         transition: .5s ease-in-out;
 
         > .wrapper {
             display: flex;
+            background-color: $light;
             flex-flow: column;
-            background-color: green;
+            > a {
+                padding-top: 8px;
+                text-decoration: none;
+                color: $dark;
+            }
         }
     }
 
